@@ -7,13 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'crypto-gods';
-
-  images: string[] = [
-    '/assets/images/example.svg',
-    '/assets/images/example.svg',
-    '/assets/images/example.svg',
-    '/assets/images/example.svg'
-  ]
-
-  constructor() {}
+    constructor() {}
 }

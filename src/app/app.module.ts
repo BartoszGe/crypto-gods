@@ -6,16 +6,20 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {GodComponent} from './god/god.component';
+import {GodComponent} from './main-page/god/god.component';
 import {CommonModule} from "@angular/common";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatButtonModule} from "@angular/material/button";
+import {GodDetailsComponent} from './god-details/god-details.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GodComponent
+    GodComponent,
+    GodDetailsComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

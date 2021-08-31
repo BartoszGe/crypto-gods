@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {GodData} from "../main-page.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-god',
@@ -7,11 +9,11 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class GodComponent implements OnInit {
 
-  @Input() imagePath = '';
+  @Input() godData!: GodData;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
-
 }
