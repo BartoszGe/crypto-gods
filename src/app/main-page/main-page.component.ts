@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-
-export interface GodData {
-  id: number,
-  imagePath: string,
-}
+import {Store} from "@ngrx/store";
+import {AppState, selectGods, selectGodsLength} from "../store/god.selectors";
+import {GodModel} from "./god/god.model";
 
 @Component({
   selector: 'app-main-page',
@@ -11,32 +9,15 @@ export interface GodData {
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
+  gods: GodModel[] | undefined;
 
-  private readonly IMAGES_ROUTE_PATH = '/assets/images/';
-
-  gods: GodData[] = [
-    {
-      id: 1,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
-    },
-    {
-      id: 2,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
-    },
-    {
-      id: 3,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
-    },
-    {
-      id: 4,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
-    }
-  ]
-
-  constructor() {
+  constructor(private store: Store<AppState>) {
   }
 
   ngOnInit(): void {
+    this.store.select(selectGods).subscribe(gods => {
+      this.gods = gods
+    })
   }
 
 }

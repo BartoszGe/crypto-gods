@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {GodData} from "../main-page.component";
 import {Router} from "@angular/router";
+import {GodModel} from "./god.model";
 
 @Component({
   selector: 'app-god',
@@ -9,11 +9,15 @@ import {Router} from "@angular/router";
 })
 export class GodComponent implements OnInit {
 
-  @Input() godData!: GodData;
+  @Input() god: GodModel;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
+  }
+
+  goToDetails() {
+    this.router.navigateByUrl('gods/' + this.god.id + '/details');
   }
 }

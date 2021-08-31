@@ -1,13 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {GodDetailsComponent} from "./god-details/god-details.component";
-import {GodData, MainPageComponent} from "./main-page/main-page.component";
+import {MainPageComponent} from "./main-page/main-page.component";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'gods',
-    pathMatch: 'full'
+    component: MainPageComponent
   },
   {
     path: 'gods',

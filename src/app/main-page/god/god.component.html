@@ -1,10 +1,9 @@
 <div>
   <p>days: 30 hours: 28: minutes: 23: seconds: 20</p>
-  <img [src]=godData.imagePath alt="god" style="border: 10px solid">
+  <img [src]=this.god?.imagePath alt="god" style="border: 10px solid">
   <div>
     <button mat-raised-button
-            [routerLink]="[godData.id, 'details']"
-            [state]="{godData: this.godData}"
+            (click)="goToDetails()"
             color="primary">
       Details
     </button>

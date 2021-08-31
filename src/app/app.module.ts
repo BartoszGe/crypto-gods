@@ -12,6 +12,8 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatButtonModule} from "@angular/material/button";
 import {GodDetailsComponent} from './god-details/god-details.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import {StoreModule} from "@ngrx/store";
+import {godReducer} from "./store/god.reducer";
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { MainPageComponent } from './main-page/main-page.component';
     MatCardModule,
     NgbModule,
     MatButtonToggleModule,
-    MatButtonModule
+    MatButtonModule,
+    StoreModule.forRoot({ gods: godReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]
