@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {AppState, selectGods, selectGodsLength} from "../store/god.selectors";
 import {GodModel} from "./god/god.model";
+import {ContractService} from "../block-chain/contract.service";
 
 @Component({
   selector: 'app-main-page',
@@ -11,7 +12,8 @@ import {GodModel} from "./god/god.model";
 export class MainPageComponent implements OnInit {
   gods: GodModel[] | undefined;
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<AppState>,
+              private contractService: ContractService) {
   }
 
   ngOnInit(): void {
@@ -20,4 +22,7 @@ export class MainPageComponent implements OnInit {
     })
   }
 
+  connectWallet() {
+    this.contractService.openMetamask();
+  }
 }
