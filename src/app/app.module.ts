@@ -13,7 +13,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {GodDetailsComponent} from './god-details/god-details.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import {StoreModule} from "@ngrx/store";
-import {godReducer} from "./store/god.reducer";
+import {MatTableModule} from "@angular/material/table";
+import {BlockchainResolve} from "./block-chain/blockchain.resolve";
+import {reducers} from "./store/core.selector";
 
 
 @NgModule({
@@ -23,18 +25,19 @@ import {godReducer} from "./store/god.reducer";
     GodDetailsComponent,
     MainPageComponent
   ],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    NgbModule,
-    MatButtonToggleModule,
-    MatButtonModule,
-    StoreModule.forRoot({ gods: godReducer }),
-  ],
-  providers: [],
+    imports: [
+        BrowserModule,
+        CommonModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        NgbModule,
+        MatButtonToggleModule,
+        MatButtonModule,
+        StoreModule.forRoot(reducers),
+        MatTableModule,
+    ],
+  providers: [BlockchainResolve],
   bootstrap: [AppComponent]
 })
 export class AppModule {

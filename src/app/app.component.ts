@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {select, Store} from "@ngrx/store";
-import {update} from "./store/god.actions";
+import {Store} from "@ngrx/store";
+import {AppState} from "./store/core.selector";
 import {GodModel} from "./main-page/god/god.model";
-import {AppState, selectGods} from "./store/god.selectors";
+import {saveGods} from "./store/god/god.actions";
 
 @Component({
   selector: 'app-root',
@@ -22,15 +22,15 @@ export class AppComponent implements OnInit {
     },
     {
       id: 2,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
+      imagePath: this.IMAGES_ROUTE_PATH + 2 + '.svg',
     },
     {
       id: 3,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
+      imagePath: this.IMAGES_ROUTE_PATH + 3 + '.svg',
     },
     {
       id: 4,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
+      imagePath: this.IMAGES_ROUTE_PATH + 4 + '.svg',
     }
   ]
 
@@ -38,6 +38,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(update({gods: this.gods}));
+    this.store.dispatch(saveGods({gods: this.gods}));
   }
 }

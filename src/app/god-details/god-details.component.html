@@ -1,2 +1,38 @@
-<p>id: {{id}}</p>
-<p>path: {{god.imagePath}}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img [src]=this.god?.imagePath alt="god" style="border: 10px solid">
+    </div>
+    <div class="col-md-6">
+      <p>path: {{god.imagePath}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+    <table mat-table
+           [dataSource]=dataSource
+           style="width: 100%;"
+           class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let godDetails"> {{godDetails.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let godDetails"> {{godDetails.date}} </td>
+      </ng-container>
+      <ng-container matColumnDef="bidderAddress">
+        <th mat-header-cell *matHeaderCellDef>Bidder Address</th>
+        <td mat-cell *matCellDef="let godDetails"> {{godDetails.bidderAddress}} </td>
+      </ng-container>
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Amount</th>
+        <td mat-cell *matCellDef="let godDetails"> {{godDetails.amount}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    </div>
+  </div>
+</div>
+
