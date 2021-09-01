@@ -24,5 +24,7 @@ export class MainPageComponent implements OnInit {
 
   connectWallet() {
     this.contractService.openMetamask();
+    // this.contractService.sendMyEth();
+    console.log(this.contractService.createOrganization());
   }
 }
