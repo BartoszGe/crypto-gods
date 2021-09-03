@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import Web3 from "web3";
-import {GOD_ABI, GOD_ADDRESS} from "../../assets/abi/god_abi";
+import {GOD_ADDRESS, GOD_ARTIFACT} from "../../assets/abi/god_abi_rinkeby";
 
 declare const window: any;
 
@@ -14,11 +14,10 @@ export class ContractService {
   accounts: any;
   godContract: any;
 
-  constructor() {
-  }
+  constructor() {}
 
   public async init(): Promise<any> {
-    this.web3 = await new Web3('http://192.168.1.83:7545');
+    this.web3 = new Web3('https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161');
     return this.web3;
   }
 
@@ -56,7 +55,7 @@ export class ContractService {
   // }
   //
   public takeGodDetails = async (id: number) => {
-    this.godContract = new this.web3.eth.Contract(GOD_ABI.abi, GOD_ADDRESS);
+    this.godContract = new this.web3.eth.Contract(GOD_ARTIFACT.abi, GOD_ADDRESS);
     return await this.godContract.methods
       .getBids(id)
       .call();

@@ -6,13 +6,8 @@ import {AppState} from "../store/core.selector";
 import {ContractService} from "../block-chain/contract.service";
 import {selectGods} from "../store/god/god.selectors";
 import {MatTableDataSource} from "@angular/material/table";
-
-interface GodDetails {
-  id: number,
-  date: Date,
-  bidderAddress: string,
-  amount: number
-}
+import {GodDetails} from "./god-details.model";
+import {mapGodDetailsFromBlockchain} from "../block-chain/contract.service.util";
 
 @Component({
   selector: 'app-god-details',
@@ -38,29 +33,13 @@ export class GodDetailsComponent implements OnInit {
       }
     })
 
-    this.contractService.init().then(() =>
-      this.contractService.takeGodDetails(this.id).then(response => {
-        this.dataSource.data = this.mapFromBlockchain(response);
-      })
+    this.contractService.takeGodDetails(this.id)
+      .then(response => {
+        this.dataSource.data = mapGodDetailsFromBlockchain(response);
+      }
     )
   }
 
   ngOnInit(): void {
   }
-
-  private mapFromBlockchain(response: any): GodDetails[] {
-    const godDetails: GodDetails[] = []
-    const tableLength = response[0].length - 1;
-    response[0].map((detail: any, index: number) => {
-      const revertedIndex = tableLength - index;
-      godDetails.push({
-        id: index,
-        date: response[0][revertedIndex],
-        bidderAddress: response[1][revertedIndex],
-        amount: response[2][revertedIndex]
-      })
-    })
-    return godDetails;
-  }
-
 }
