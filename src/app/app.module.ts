@@ -16,6 +16,7 @@ import {StoreModule} from "@ngrx/store";
 import {MatTableModule} from "@angular/material/table";
 import {BlockchainResolve} from "./block-chain/blockchain.resolve";
 import {reducers} from "./store/core.selector";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {reducers} from "./store/core.selector";
         MatButtonModule,
         StoreModule.forRoot(reducers),
         MatTableModule,
+        FontAwesomeModule,
     ],
   providers: [BlockchainResolve],
   bootstrap: [AppComponent]

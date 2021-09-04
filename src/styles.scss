@@ -33,10 +33,30 @@ $crypto-gods-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($crypto-gods-theme);
 
+@font-face {
+  font-family: anglican;
+  src: local("anglican"), url(./assets/fonts/anglicantext/AnglicanText.ttf) format("opentype");
+}
+@font-face {
+  font-family: chapbook;
+  src: local("chapbook"), url(./assets/fonts/chapbook/Chapbook/Chapbook-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: fustAndShoffer;
+  src: local("fustAndShoffer"), url(./assets/fonts/fust-schoeffer/FustAndSchoeffer/fustAndShoffer.otf) format("opentype");
+}
+@font-face {
+  font-family: cloister-black;
+  src: local("cloister-black"), url(./assets/fonts/cloister-black/CloisterBlack.ttf) format("opentype");
+}
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

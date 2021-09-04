@@ -1,21 +1,32 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-9"></div>
-    <div class="col-md-3">
-      <button mat-raised-button
-              (click)="connectWallet()"
-              color="primary">
-        Connect Wallet
-      </button>
+<div>
+  <button mat-raised-button
+          (click)="connectWallet()"
+          color="primary">
+    Connect Wallet
+  </button>
+
+  <div class="title-background">
+    <h1 class="title">Crypto Gods</h1>
+  </div>
+
+
+  <div class="container">
+    <div class="gods-background">
+      <div class="gods row">
+        <div class="god col-md-3"
+             *ngFor="let god of gods">
+          <app-god
+            [god]=god>
+          </app-god>
+        </div>
+      </div>
     </div>
   </div>
-  <h1>Crypto Gods</h1>
-  <div class="row">
-    <div class="god col-md-3"
-         *ngFor="let god of gods">
-      <app-god
-        [god]=god>
-      </app-god>
-    </div>
+
+  <div class="expression-background">
   </div>
+
+  <footer class="bg-dark text-center text-white">
+
+  </footer>
 </div>

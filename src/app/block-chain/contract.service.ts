@@ -21,27 +21,28 @@ export class ContractService {
     return this.web3;
   }
 
-  // private getAccounts = async () => {
-  //   try {
-  //     return await window.ethereum.request({method: 'eth_accounts'});
-  //   } catch (e) {
-  //     return [];
-  //   }
-  // }
+  private getAccounts = async () => {
+    try {
+      return await window.ethereum.request({method: 'eth_accounts'});
+    } catch (e) {
+      return [];
+    }
+  }
 
-  // public openMetamask = async () => {
-  //
-  //   let addresses = await this.getAccounts();
-  //   console.log("service", addresses)
-  //   if (!addresses.length) {
-  //     try {
-  //       addresses = await window.ethereum.enable();
-  //     } catch (e) {
-  //       return false;
-  //     }
-  //   }
-  //   return addresses.length ? addresses[0] : null;
-  // };
+  public openMetamask = async () => {
+
+    let addresses = await this.getAccounts();
+    console.log("service", addresses)
+    if (!addresses.length) {
+      try {
+        addresses = await window.ethereum.enable();
+      } catch (e) {
+        return false;
+      }
+    }
+
+    return addresses.length ? addresses[0] : null;
+  };
 
   // public sendMyEth = async () => {
   //   this.accounts = await this.web3js.eth.getAccounts();

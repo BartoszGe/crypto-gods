@@ -10,9 +10,8 @@ import {saveGods} from "./store/god/god.actions";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'crypto-gods';
-
   private readonly IMAGES_ROUTE_PATH = '/assets/images/';
+
 
   //test
   gods: GodModel[] = [
@@ -22,15 +21,15 @@ export class AppComponent implements OnInit {
     },
     {
       id: 2,
-      imagePath: this.IMAGES_ROUTE_PATH + 2 + '.svg',
+      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
     },
     {
       id: 3,
-      imagePath: this.IMAGES_ROUTE_PATH + 3 + '.svg',
+      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
     },
     {
       id: 4,
-      imagePath: this.IMAGES_ROUTE_PATH + 4 + '.svg',
+      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
     }
   ]
 
