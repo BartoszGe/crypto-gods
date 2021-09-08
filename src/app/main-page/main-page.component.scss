@@ -1,4 +1,12 @@
-@import "./neon-text";
+@import "src/app/main-page/neon";
+
+%font-settings {
+  user-select: none;
+  font-size: 12rem;
+  font-family: neon, serif;
+  backface-visibility: hidden;
+  text-align: center;
+}
 
 button {
   position: -webkit-sticky;
@@ -6,6 +14,7 @@ button {
   float: right;
   top: 2rem;
   right: 6rem;
+  z-index: 1;
 }
 
 .title-background{
@@ -23,26 +32,28 @@ button {
 }
 
 .title-first {
-  @include text-color(#E47CFC, #BC2FFC);
+  color: #E47CFC;
   @extend %font-settings;
-  @include font-animation(neon);
+  @include font-neon-animation;
 }
 
 .title-second {
-  @include text-color(#E47CFC, #BC2FFC);
+  color: #E47CFC;
   @extend %font-settings;
-  @include font-animation(neon);
+  @include font-neon-animation;
 }
 
 .gods-background{
-  height: 100vh;
-  background-color: white;
+  min-height: 100vh;
+  background-color: #BC2FFC;
   background-size: cover;
+  display: flex;
+  align-items: center;
 }
 
 .gods {
-  height: 100vh;
-  padding-top: 15rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 }
 
 .expression-background{

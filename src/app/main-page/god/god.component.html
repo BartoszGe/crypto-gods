@@ -1,5 +1,9 @@
-<div>
-  <img [src]=this.god?.imagePath alt="god" style="border: 10px solid">
+<div class="god">
+  <div class="border-neon">
+    <img
+      [src]=this.god?.imagePath
+      alt="god">
+  </div>
   <div class="center-element">
     <button mat-raised-button
             (click)="goToDetails()"

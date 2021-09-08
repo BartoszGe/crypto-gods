@@ -10,26 +10,26 @@ import {saveGods} from "./core/store/god/god.actions";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  private readonly IMAGES_ROUTE_PATH = '/assets/images/';
+  private readonly IMAGES_ROUTE_PATH = '/assets/images/god';
 
 
   //test
   gods: GodModel[] = [
     {
       id: 1,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
+      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.png',
     },
     {
       id: 2,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
+      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.png',
     },
     {
       id: 3,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
+      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.png',
     },
     {
       id: 4,
-      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.svg',
+      imagePath: this.IMAGES_ROUTE_PATH + 1 + '.png',
     }
   ]
 

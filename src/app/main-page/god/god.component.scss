@@ -1,4 +1,13 @@
+.god {
+  margin: 1rem;
+}
+
+.border-neon {
+  animation: yellow-neon-border .05s ease-in-out infinite alternate;
+}
+
 img {
+  width: 100%;
 }
 
 button {
@@ -7,4 +16,63 @@ button {
 
 .center-element {
   text-align: center;
+}
+
+@keyframes red-neon-border {
+  from {
+    box-shadow: 0 0 1px rgba(202, 228, 225, 0.92),
+    0 0 30px rgba(202, 228, 225, 0.34),
+    0 0 12px rgba(239, 35, 121, 0.52),
+    0 0 21px rgba(239, 35, 121, 0.92),
+    0 0 34px rgba(239, 35, 121, 0.78),
+    0 0 54px rgba(239, 35, 121, 0.92);
+  }
+  to {
+    box-shadow: 0 0 1px rgba(202, 228, 225, 0.98),
+    0 0 30px rgba(202, 228, 225, 0.42),
+    0 0 12px rgba(239, 35, 121, 0.58),
+    0 0 22px rgba(239, 35, 121, 0.84),
+    0 0 38px rgba(239, 35, 121, 0.88),
+    0 0 60px rgba(239, 35, 121, 1);
+  }
+}
+
+
+@keyframes yellow-neon-border {
+  from {
+    box-shadow: 0 0 1px rgba(202, 228, 225, 0.92),
+    0 0 30px rgba(202, 228, 225, 0.34),
+    0 0 12px rgba(225, 233, 145, 0.52),
+    0 0 21px rgba(225, 233, 145, 0.92),
+    0 0 34px rgba(225, 233, 145, 0.78),
+    0 0 54px rgba(225, 233, 145, 0.92);
+  }
+  to {
+    box-shadow: 0 0 1px rgba(202, 228, 225, 0.98),
+    0 0 30px rgba(202, 228, 225, 0.42),
+    0 0 12px rgba(225, 233, 145, 0.58),
+    0 0 22px rgba(225, 233, 145, 0.84),
+    0 0 38px rgba(225, 233, 145, 0.88),
+    0 0 60px rgba(225, 233, 145, 1);
+  }
+}
+
+
+@keyframes green-neon-border {
+  from {
+    box-shadow: 0 0 1px rgba(202, 228, 225, 0.92),
+    0 0 30px rgba(202, 228, 225, 0.34),
+    0 0 12px rgba(150, 206, 111, 0.52),
+    0 0 21px rgba(150, 206, 111, 0.92),
+    0 0 34px rgba(150, 206, 111, 0.78),
+    0 0 54px rgba(150, 206, 111, 0.92);
+  }
+  to {
+    box-shadow: 0 0 1px rgba(202, 228, 225, 0.98),
+    0 0 30px rgba(202, 228, 225, 0.42),
+    0 0 12px rgba(150, 206, 111, 0.58),
+    0 0 22px rgba(150, 206, 111, 0.84),
+    0 0 38px rgba(150, 206, 111, 0.88),
+    0 0 60px rgba(150, 206, 111, 1);
+  }
 }
