@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import Web3 from "web3";
-import {GOD_ADDRESS, GOD_ARTIFACT} from "../../assets/abi/god_abi_rinkeby";
+import {GOD_ADDRESS, GOD_ARTIFACT} from "../../../assets/abi/god_abi_rinkeby";
 
 declare const window: any;
 

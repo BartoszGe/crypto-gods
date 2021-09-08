@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {GodModel} from "../main-page/god/god.model";
+import {GodModel} from "../../main-page/god/god.model";
 import {Store} from "@ngrx/store";
-import {AppState} from "../store/core.selector";
-import {ContractService} from "../block-chain/contract.service";
-import {selectGods} from "../store/god/god.selectors";
+import {AppState} from "../../core/store/core.selector";
+import {ContractService} from "../../core/block-chain/contract.service";
+import {selectGods} from "../../core/store/god/god.selectors";
 import {MatTableDataSource} from "@angular/material/table";
 import {GodDetails} from "./god-details.model";
-import {mapGodDetailsFromBlockchain} from "../block-chain/contract.service.util";
+import {mapGodDetailsFromBlockchain} from "../../core/block-chain/contract.service.util";
 
 @Component({
   selector: 'app-god-details',

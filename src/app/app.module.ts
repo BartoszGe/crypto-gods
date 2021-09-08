@@ -10,12 +10,12 @@ import {GodComponent} from './main-page/god/god.component';
 import {CommonModule} from "@angular/common";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatButtonModule} from "@angular/material/button";
-import {GodDetailsComponent} from './god-details/god-details.component';
+import {GodDetailsComponent} from './features/god-details/god-details.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import {StoreModule} from "@ngrx/store";
 import {MatTableModule} from "@angular/material/table";
-import {BlockchainResolve} from "./block-chain/blockchain.resolve";
-import {reducers} from "./store/core.selector";
+import {BlockchainResolve} from "./core/block-chain/blockchain.resolve";
+import {reducers} from "./core/store/core.selector";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 

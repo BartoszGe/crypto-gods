@@ -1,4 +1,4 @@
-import {GodDetails} from "../god-details/god-details.model";
+import {GodDetails} from "../../features/god-details/god-details.model";
 
 export function mapGodDetailsFromBlockchain(response: any): GodDetails[] {
   const godDetails: GodDetails[] = []

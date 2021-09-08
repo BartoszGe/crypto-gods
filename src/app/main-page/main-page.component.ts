@@ -1,15 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {GodModel} from "./god/god.model";
-import {AppState} from "../store/core.selector";
-import {selectGods} from "../store/god/god.selectors";
-import {ContractService} from "../block-chain/contract.service";
-import {faFont} from "@fortawesome/free-solid-svg-icons";
+import {AppState} from "../core/store/core.selector";
+import {selectGods} from "../core/store/god/god.selectors";
+import {ContractService} from "../core/block-chain/contract.service";
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss']
+  styleUrls: [
+    './main-page.component.scss'
+  ]
 })
 export class MainPageComponent implements OnInit {
   gods: GodModel[] | undefined;

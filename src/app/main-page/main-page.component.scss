@@ -1,3 +1,5 @@
+@import "./neon-text";
+
 button {
   position: -webkit-sticky;
   position: sticky;
@@ -10,18 +12,26 @@ button {
   height: 100vh;
   background-color: black;
   background-size: cover;
+  position: relative;
 }
 
 .title {
-  color: white;
-  text-align: center;
-  font-family: cloister-black, serif;
-  font-size: 13rem;
-  line-height: normal;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.title-first {
+  @include text-color(#E47CFC, #BC2FFC);
+  @extend %font-settings;
+  @include font-animation(neon);
+}
+
+.title-second {
+  @include text-color(#E47CFC, #BC2FFC);
+  @extend %font-settings;
+  @include font-animation(neon);
 }
 
 .gods-background{
