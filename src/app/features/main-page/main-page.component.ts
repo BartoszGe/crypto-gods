@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {GodModel} from "./god/god.model";
-import {AppState} from "../core/store/core.selector";
-import {selectGods} from "../core/store/god/god.selectors";
-import {ContractService} from "../core/block-chain/contract.service";
+import {AppState} from "../../core/store/core.selector";
+import {selectGods} from "../../core/store/god/god.selectors";
+import {ContractService} from "../../core/block-chain/contract.service";
 
 @Component({
   selector: 'app-main-page',

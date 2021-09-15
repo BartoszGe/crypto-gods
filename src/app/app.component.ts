@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {AppState} from "./core/store/core.selector";
-import {GodModel} from "./main-page/god/god.model";
+import {GodModel} from "./features/main-page/god/god.model";
 import {saveGods} from "./core/store/god/god.actions";
-import {Status} from './main-page/god/status';
+import {Status} from './features/main-page/god/status';
 
 @Component({
   selector: 'app-root',

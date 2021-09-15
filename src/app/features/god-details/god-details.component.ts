@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {GodModel} from "../../main-page/god/god.model";
+import {GodModel} from "../main-page/god/god.model";
 import {Store} from "@ngrx/store";
 import {AppState} from "../../core/store/core.selector";
 import {ContractService} from "../../core/block-chain/contract.service";

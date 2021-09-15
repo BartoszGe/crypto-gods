@@ -1,4 +1,4 @@
-import {GodModel} from "../../../main-page/god/god.model";
+import {GodModel} from "../../../features/main-page/god/god.model";
 
 export interface GodsState {
   gods?: GodModel[]

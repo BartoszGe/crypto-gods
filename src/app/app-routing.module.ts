@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {GodDetailsComponent} from "./features/god-details/god-details.component";
-import {MainPageComponent} from "./main-page/main-page.component";
+import {MainPageComponent} from "./features/main-page/main-page.component";
 import {BlockchainResolve} from "./core/block-chain/blockchain.resolve";
 
 const routes: Routes = [
