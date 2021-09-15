@@ -3,6 +3,7 @@ import {Store} from "@ngrx/store";
 import {AppState} from "./core/store/core.selector";
 import {GodModel} from "./main-page/god/god.model";
 import {saveGods} from "./core/store/god/god.actions";
+import {Status} from './main-page/god/status';
 
 @Component({
   selector: 'app-root',
@@ -18,18 +19,22 @@ export class AppComponent implements OnInit {
     {
       id: 1,
       imagePath: this.IMAGES_ROUTE_PATH + 1 + '.png',
+      status: Status.BURNED
     },
     {
       id: 2,
       imagePath: this.IMAGES_ROUTE_PATH + 1 + '.png',
+      status: Status.ENDED
     },
     {
       id: 3,
       imagePath: this.IMAGES_ROUTE_PATH + 1 + '.png',
+      status: Status.ON_GOING
     },
     {
       id: 4,
       imagePath: this.IMAGES_ROUTE_PATH + 1 + '.png',
+      status: Status.ENDING_SOON
     }
   ]
 

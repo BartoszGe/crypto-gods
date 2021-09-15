@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {GodModel} from "./god.model";
+import {animate, keyframes, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-god',

@@ -1,9 +1,22 @@
 .god {
   margin: 1rem;
+  user-select: none;
 }
 
-.border-neon {
+.red-neon-border-animation {
+  animation: red-neon-border .05s ease-in-out infinite alternate;
+}
+
+.yellow-neon-border-animation {
   animation: yellow-neon-border .05s ease-in-out infinite alternate;
+}
+
+.green-neon-border-animation {
+  animation: green-neon-border .05s ease-in-out infinite alternate;
+}
+
+.black-neon-border-animation {
+  animation: black-neon-border .05s ease-in-out infinite alternate;
 }
 
 img {
@@ -16,6 +29,25 @@ button {
 
 .center-element {
   text-align: center;
+}
+
+@keyframes black-neon-border {
+  from {
+    box-shadow: 0 0 1px rgba(202, 228, 225, 0.92),
+    0 0 30px rgba(202, 228, 225, 0.34),
+    0 0 12px rgba(0, 0, 0, 0.52),
+    0 0 21px rgba(0, 0, 0, 0.92),
+    0 0 34px rgba(0, 0, 0, 0.78),
+    0 0 54px rgba(0, 0, 0, 0.92);
+  }
+  to {
+    box-shadow: 0 0 1px rgba(202, 228, 225, 0.98),
+    0 0 30px rgba(202, 228, 225, 0.42),
+    0 0 12px rgba(0, 0, 0, 0.58),
+    0 0 22px rgba(0, 0, 0, 0.84),
+    0 0 38px rgba(0, 0, 0, 0.88),
+    0 0 60px rgba(0, 0, 0, 1);
+  }
 }
 
 @keyframes red-neon-border {
