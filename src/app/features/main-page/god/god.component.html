@@ -1,19 +1,15 @@
 <div class="god">
-  <div [ngClass]="{
-  'red-neon-border-animation': this.god.status === 'ENDED',
-  'yellow-neon-border-animation' : this.god.status === 'ENDING_SOON',
-  'green-neon-border-animation' : this.god.status === 'ON_GOING',
-  'black-neon-border-animation' : this.god.status === 'BURNED'
+  <div
+    (click)="goToDetails()"
+    [ngClass]="{
+  'visibilityHidden': !(this.$isGodVisible | async),
+  'red-neon-border-animation': (this.$isGodVisible | async) && this.god.status === 'ENDED',
+  'yellow-neon-border-animation' : (this.$isGodVisible | async) && this.god.status === 'ENDING_SOON',
+  'green-neon-border-animation' : (this.$isGodVisible | async) && this.god.status === 'ON_GOING',
+  'black-neon-border-animation' : (this.$isGodVisible | async) && this.god.status === 'BURNED'
   }">
     <img
       [src]=this.god?.imagePath
       alt="god">
-  </div>
-  <div class="center-element">
-    <button mat-raised-button
-            (click)="goToDetails()"
-            color="basic">
-      Details
-    </button>
   </div>
 </div>

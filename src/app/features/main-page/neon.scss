@@ -2,6 +2,10 @@
   animation: neon .05s ease-in-out infinite alternate;
 }
 
+@mixin expression-neon-animation {
+  animation: neon-blue 0.1s ease-in-out infinite alternate;
+}
+
 @keyframes neon {
   from {
     text-shadow: 0 0 1px rgba(202, 228, 225, 0.92),
@@ -18,5 +22,24 @@
     0 0 22px rgba(188, 47, 252, 0.84),
     0 0 38px rgba(188, 47, 252, 0.88),
     0 0 60px rgba(188, 47, 252, 1);
+  }
+}
+
+@keyframes neon-blue {
+  from {
+    text-shadow: 0 0 1px rgba(202, 228, 225, 0.92),
+    0 0 30px rgba(202, 228, 225, 0.34),
+    0 0 12px rgba(0, 234, 255, 0.52),
+    0 0 21px rgba(0, 234, 255, 0.92),
+    0 0 34px rgba(0, 234, 255, 0.78),
+    0 0 54px rgba(0, 234, 255, 0.92);
+  }
+  to {
+    text-shadow: 0 0 4px rgba(202, 228, 225, 0.98),
+    0 0 30px rgba(202, 228, 225, 0.42),
+    0 0 12px rgba(0, 234, 255, 0.58),
+    0 0 22px rgba(0, 234, 255, 0.84),
+    0 0 38px rgba(0, 234, 255, 0.88),
+    0 0 60px rgba(0, 234, 255, 1);
   }
 }

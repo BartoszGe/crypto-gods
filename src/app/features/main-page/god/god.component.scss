@@ -1,22 +1,36 @@
+$vanishInTime: 1.5s;
+
 .god {
   margin: 1rem;
   user-select: none;
 }
 
+.visibilityHidden {
+  visibility: hidden;
+}
+
 .red-neon-border-animation {
-  animation: red-neon-border .05s ease-in-out infinite alternate;
+  visibility: visible !important;
+  animation: red-neon-border .05s ease-in-out infinite alternate,
+  vanishIn $vanishInTime;
 }
 
 .yellow-neon-border-animation {
-  animation: yellow-neon-border .05s ease-in-out infinite alternate;
+  visibility: visible !important;
+  animation: yellow-neon-border .05s ease-in-out infinite alternate,
+  vanishIn $vanishInTime ease-in-out;
 }
 
 .green-neon-border-animation {
-  animation: green-neon-border .05s ease-in-out infinite alternate;
+  visibility: visible !important;
+  animation: green-neon-border .05s ease-in-out infinite alternate,
+  vanishIn $vanishInTime;
 }
 
 .black-neon-border-animation {
-  animation: black-neon-border .05s ease-in-out infinite alternate;
+  visibility: visible !important;
+  animation: black-neon-border .05s ease-in-out infinite alternate,
+  vanishIn $vanishInTime;
 }
 
 img {
@@ -35,18 +49,18 @@ button {
   from {
     box-shadow: 0 0 1px rgba(202, 228, 225, 0.92),
     0 0 30px rgba(202, 228, 225, 0.34),
-    0 0 12px rgba(0, 0, 0, 0.52),
-    0 0 21px rgba(0, 0, 0, 0.92),
-    0 0 34px rgba(0, 0, 0, 0.78),
-    0 0 54px rgba(0, 0, 0, 0.92);
+    0 0 12px rgba(255, 255, 255, 0.52),
+    0 0 21px rgba(255, 255, 255, 0.92),
+    0 0 34px rgba(255, 255, 255, 0.78),
+    0 0 54px rgba(255, 255, 255, 0.92);
   }
   to {
     box-shadow: 0 0 1px rgba(202, 228, 225, 0.98),
     0 0 30px rgba(202, 228, 225, 0.42),
-    0 0 12px rgba(0, 0, 0, 0.58),
-    0 0 22px rgba(0, 0, 0, 0.84),
-    0 0 38px rgba(0, 0, 0, 0.88),
-    0 0 60px rgba(0, 0, 0, 1);
+    0 0 12px rgba(255, 255, 255, 0.58),
+    0 0 22px rgba(255, 255, 255, 0.84),
+    0 0 38px rgba(255, 255, 255, 0.88),
+    0 0 60px rgba(255, 255, 255, 1);
   }
 }
 
@@ -94,17 +108,47 @@ button {
   from {
     box-shadow: 0 0 1px rgba(202, 228, 225, 0.92),
     0 0 30px rgba(202, 228, 225, 0.34),
-    0 0 12px rgba(150, 206, 111, 0.52),
-    0 0 21px rgba(150, 206, 111, 0.92),
-    0 0 34px rgba(150, 206, 111, 0.78),
-    0 0 54px rgba(150, 206, 111, 0.92);
+    0 0 12px rgba(124, 229, 215, 0.52),
+    0 0 21px rgba(124, 229, 215, 0.92),
+    0 0 34px rgba(124, 229, 215, 0.78),
+    0 0 54px rgba(124, 229, 215, 0.92);
   }
   to {
     box-shadow: 0 0 1px rgba(202, 228, 225, 0.98),
-    0 0 30px rgba(202, 228, 225, 0.42),
-    0 0 12px rgba(150, 206, 111, 0.58),
-    0 0 22px rgba(150, 206, 111, 0.84),
-    0 0 38px rgba(150, 206, 111, 0.88),
-    0 0 60px rgba(150, 206, 111, 1);
+    0 0 30px rgba(124, 229, 215, 0.42),
+    0 0 12px rgba(124, 229, 215, 0.58),
+    0 0 22px rgba(124, 229, 215, 0.84),
+    0 0 38px rgba(124, 229, 215, 0.88),
+    0 0 60px rgba(124, 229, 215, 1);
+  }
+}
+
+@-webkit-keyframes vanishIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    filter: blur(90px);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes vanishIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    filter: blur(90px);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    filter: blur(0px);
   }
 }

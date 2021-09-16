@@ -32,7 +32,7 @@ button {
 }
 
 .title-first {
-  color: #E47CFC;
+  color: #e47cfc;
   @extend %font-settings;
   @include font-neon-animation;
 }
@@ -45,7 +45,7 @@ button {
 
 .gods-background{
   min-height: 100vh;
-  background-color: #BC2FFC;
+  background-color: #000000;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -60,4 +60,63 @@ button {
   height: 100vh;
   background-color: black;
   background-size: cover;
+  position: relative;
+}
+
+.expression {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.expression-samarkan{
+  color: rgba(0, 234, 255, 0.92);
+  user-select: none;
+  font-size: 15rem;
+  font-family: samarkan, serif;
+  backface-visibility: hidden;
+  text-align: center;
+  @include expression-neon-animation;
+}
+
+.expression-shayan{
+  color: rgba(0, 234, 255, 0.92);
+  user-select: none;
+  font-size: 15rem;
+  font-family: shayan, serif;
+  backface-visibility: hidden;
+  text-align: center;
+  @include expression-neon-animation;
+}
+
+.expression-catholic{
+  color: rgba(0, 234, 255, 0.92);
+  user-select: none;
+  font-size: 15rem;
+  font-family: cloister-black, serif;
+  backface-visibility: hidden;
+  text-align: center;
+  @include expression-neon-animation;
+}
+
+footer{
+  height: 30vh;
+  background-color: black;
+  background-size: cover;
+  position: relative;
+}
+
+.footer-text {
+  align-items: end;
+}
+
+h2 {
+  user-select: none;
+  font-size: 3rem;
+  color: #E47CFC;
+  font-family: battleContinuez, serif;
+  backface-visibility: hidden;
+  text-align: center;
+  @include font-neon-animation;
 }

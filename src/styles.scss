@@ -49,10 +49,34 @@ $crypto-gods-theme: mat.define-light-theme((
   font-family: cloister-black;
   src: local("cloister-black"), url(./assets/fonts/cloister-black/CloisterBlack.ttf) format("opentype");
 }
+@font-face {
+  font-family: samarkan;
+  src: local("samarkan"), url(./assets/fonts/samarkan/SAMAN.TTF) format("opentype");
+}
 
 @font-face {
   font-family: neon;
-  src: local("fustAndShoffer"), url(./assets/fonts/neon/neon.ttf) format("opentype");
+  src: local("neon"), url(./assets/fonts/neon/neon.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: aceh;
+  src: local("aceh"), url(./assets/fonts/aceh-darusalam/AD.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: shayan;
+  src: local("shayan"), url(./assets/fonts/shayan/Shayan.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: dreamland;
+  src: local("dreamland"), url(./assets/fonts/dreamland/dreamlan.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: battleContinuez;
+  src: local("battleContinuez"), url(./assets/fonts/BattleContinuez/TheBattleCont.ttf) format("opentype");
 }
 
 /* You can add global styles to this file, and also import other style files */

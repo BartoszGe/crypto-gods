@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 import {GodModel} from "./god.model";
-import {animate, keyframes, state, style, transition, trigger} from '@angular/animations';
+import {fromEvent, Observable, Subject} from 'rxjs';
 
 @Component({
   selector: 'app-god',
@@ -11,8 +11,17 @@ import {animate, keyframes, state, style, transition, trigger} from '@angular/an
 export class GodComponent implements OnInit {
 
   @Input() god: GodModel;
+  $isGodVisible: Observable<boolean>;
 
   constructor(private router: Router) {
+    this.$isGodVisible = new Observable<boolean>(subscriber => {
+      fromEvent(window, 'scroll')
+        .subscribe((event: Event) => {
+          if (this.getYPosition(event.target as Document) > 400) {
+            subscriber.next(true);
+          }
+        });
+    });
   }
 
   ngOnInit(): void {
@@ -20,5 +29,9 @@ export class GodComponent implements OnInit {
 
   goToDetails() {
     this.router.navigateByUrl('gods/' + this.god.id + '/details');
+  }
+
+  getYPosition(document: Document): number {
+    return (document.scrollingElement as Element).scrollTop;
   }
 }
